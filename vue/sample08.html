@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container{
+            width: 300px;
+            margin: auto;
+        }
+        #app h1 {
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+            padding: 16px 0;
+        }
+        #app li {
+            line-height: 1.5;
+        }
+        #app input[type="text"] {
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>My Todos</h1>
+        <ul>
+            <li v-for='todo in todos'>{{ todo }}</li>
+        </ul>
+        <form action="">
+            <p><input type="text"></p>
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    var vm = new Vue({
+        el: '#app',
+        data:{
+            todos:[
+                'task 1',
+                'task 2',
+                'task 3'
+            ]
+            }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <img v-bind:src="imagesPath" alt="" v-bind:width="imagesWidth">
+        </div>
+        <div>
+            <button v-on:click="clickDogButton">イヌ</button>
+            <button v-on:click="clickCatButton">ネコ</button>
+            <button v-on:click="clickWidthButton">幅600</button>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                imagesPath: '',
+                imagesWidth: '100 '
+            },
+            methods:{
+                clickDogButton: function(){
+                    this.imagesPath = 'https://www.asahicom.jp/images15/fbox/edit5/201506/0615dog1_660.jpg';
+                },
+                clickCatButton: function(){
+                    this.imagesPath = 'https://blog.counselor.or.jp/wp-content/uploads/2019/06/image001-20-1024x680.jpg';
+                },
+                clickWidthButton: function(){
+                    this.imagesWidth = 600;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
